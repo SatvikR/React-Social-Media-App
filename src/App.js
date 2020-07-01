@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import {} from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 
-function App() {
+import Navbar from "./components/navbar";
+import CreateMessage from "./components/create-message";
+import EditMessage from "./components/edit-message";
+import Login from "./components/login";
+import MessageList from "./components/message-list";
+import MyMessages from "./components/my-messages";
+import SignUp from "./components/sign-up";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Route path="/" exact component={MessageList} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/create" exact component={CreateMessage} />
+        <Route path="/edit/:id" exact component={EditMessage} />
+        <Route path="/messages" exact component={MyMessages} />
+        <Route path="/sign-up" exact component={SignUp} />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
