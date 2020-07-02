@@ -22,7 +22,7 @@ npm install
 npm run install-server
 
 # Run the app
-npm run start-all
+npm run all
 ```
 
 Once you've ran those commands, go to http://localhost:3000 in your browser.
