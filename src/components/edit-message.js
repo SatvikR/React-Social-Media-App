@@ -22,7 +22,7 @@ export default class EditMessage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/messages/" + this.props.match.params.id)
+      .get("/messages/" + this.props.match.params.id)
       .then((res) => {
         this.setState({ title: res.data.title, body: res.data.body });
       })
@@ -39,14 +39,11 @@ export default class EditMessage extends Component {
 
   handleSubmit = () => {
     axios
-      .post(
-        "http://localhost:5000/messages/update/" + this.props.match.params.id,
-        {
-          username: localStorage.getItem("username"),
-          title: this.state.title,
-          body: this.state.body,
-        }
-      )
+      .post("/messages/update/" + this.props.match.params.id, {
+        username: localStorage.getItem("username"),
+        title: this.state.title,
+        body: this.state.body,
+      })
       .then((res) => {
         console.log(res.data);
         window.location = "/";

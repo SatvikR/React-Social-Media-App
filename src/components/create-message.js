@@ -40,7 +40,7 @@ export default class CreateMessage extends Component {
 
   handleSubmit = () => {
     axios
-      .post("http://localhost:5000/messages/add", {
+      .post("/messages/add", {
         username: localStorage.getItem("username"),
         title: this.state.title,
         body: this.state.body,

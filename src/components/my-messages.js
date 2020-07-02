@@ -54,7 +54,7 @@ export default class MyMessages extends Component {
       window.location = "/login";
     }
     axios
-      .get("http://localhost:5000/messages/")
+      .get("/messages/")
       .then((res) => {
         this.setState({ messages: res.data });
       })
@@ -64,7 +64,7 @@ export default class MyMessages extends Component {
   }
 
   deleteMessage = (id) => {
-    axios.delete("http://localhost:5000/message/" + id).then((res) => {
+    axios.delete("/message/" + id).then((res) => {
       console.log(res.data);
     });
     this.setState({

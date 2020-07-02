@@ -31,7 +31,7 @@ export default class MessageList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/messages/")
+      .get("/messages/")
       .then((res) => {
         this.setState({ messages: res.data });
       })

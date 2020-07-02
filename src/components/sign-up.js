@@ -29,7 +29,7 @@ export default class SignUp extends Component {
 
   handleSubmit = () => {
     axios
-      .post("http://localhost:5000/users/add", {
+      .post("/users/add", {
         username: this.state.username,
         password: this.state.password,
       })

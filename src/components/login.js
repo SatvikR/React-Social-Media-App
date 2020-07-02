@@ -31,7 +31,7 @@ export default class Login extends Component {
 
   handleSubmit = () => {
     axios
-      .post("http://localhost:5000/users/login", {
+      .post("/users/login", {
         username: this.state.username,
         password: this.state.password,
       })
