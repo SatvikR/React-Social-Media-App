@@ -25,7 +25,7 @@ export default class CreateMessage extends Component {
       localStorage.getItem("logged_in") === null ||
       localStorage.getItem("logged_in") === "false"
     ) {
-      console.log("redirecting..");
+      console.log("redirecting...");
       window.location = "/login";
     }
   }
