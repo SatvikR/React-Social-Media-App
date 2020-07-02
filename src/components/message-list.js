@@ -6,10 +6,12 @@ const Message = (props) => {
   return (
     <Grid celled>
       <Grid.Row>
-        <Grid.Column width={3}>
-          <Header as="h2">{props.message.username}</Header>
+        <Grid.Column width={6}>
+          <p style={{ fontSize: 20 }}>
+            <b>{props.message.username}</b>
+          </p>
         </Grid.Column>
-        <Grid.Column width={13}>
+        <Grid.Column width={10}>
           <Header as="h3">{props.message.title}</Header>
           <p style={{ fontSize: 16 }}>{props.message.body}</p>
         </Grid.Column>
@@ -32,7 +34,6 @@ export default class MessageList extends Component {
       .get("http://localhost:5000/messages/")
       .then((res) => {
         this.setState({ messages: res.data });
-        console.log(this.state.messages);
       })
       .catch((err) => {
         console.log(`Error: ${err}`);
@@ -40,7 +41,8 @@ export default class MessageList extends Component {
   }
 
   messageList = () => {
-    return this.state.messages.map((currentMessage) => {
+    const messageArray = this.state.messages.reverse();
+    return messageArray.map((currentMessage) => {
       return <Message message={currentMessage} />;
     });
   };
