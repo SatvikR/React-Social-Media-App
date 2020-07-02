@@ -2,7 +2,9 @@
 
 This is a twitter-like app made with MongoDB, Express, React.js, and node.js
 
-Steps to Run:
+The url is http://socialvenom.herokuapp.com/
+
+If you would like to run it yourself, then do the following:
 
 First create a file called `.env` in the backend directory. In that file, create a variable called `ATLAS_URI` and set its value to your mongodb uri.
 
