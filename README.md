@@ -2,7 +2,7 @@
 
 This is a twitter-like app made with MongoDB, Express, React.js, and node.js
 
-The url is http://socialvenom.herokuapp.com/
+The url is http://socialapp.satvikreddy.com/
 
 If you would like to run it yourself, then do the following:
 
